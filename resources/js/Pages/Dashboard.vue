@@ -82,7 +82,7 @@ import moment from 'moment';
             sorting() {
                 axios.get('/dashboard_sorted').then(function (response){
                     console.log(response);
-                   
+                   this.$emit("sorting", response)
                 }).catch(function (error) {
                     console.log(error);
                 });
