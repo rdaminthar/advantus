@@ -70,10 +70,9 @@ import moment from 'moment';
 </template>
 <script>
     export default {
-       
-        props: {
-            temperatures: Object
-        },
+      props:  {
+          temperatures: Object
+      }, 
         methods: {
             dateTime(value) {
                 return moment(value).format('ddd, DD MMMM YYYY, H:mm');
@@ -82,7 +81,6 @@ import moment from 'moment';
             sorting() {
                 axios.get('/dashboard_sorted').then(function (response){
                     console.log(response);
-                   this.$emit("sorting", response)
                 }).catch(function (error) {
                     console.log(error);
                 });

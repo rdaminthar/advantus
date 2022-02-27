@@ -16,12 +16,14 @@ class DashboardController extends Controller
         $this->temperature_repository = $temperature_repository;
     }
 
+    /* Initial dashboard view */
     public function dashboardView() {
         $temperature_details = $this->temperature_repository->getTemperatureByUser();
         
         return Inertia::render('Dashboard', ['temperatures'=>$temperature_details]);
     }
 
+    /* Filter values based on temperature dashboard view */
     public function temperatureSorted() {
         $sorted_temperature_details = $this->temperature_repository->getSortedTemperatureByUser();
 
